@@ -36,7 +36,7 @@ public class TimeTable {
 
 
 	        //Make sure that the first day is before the last day
-	        if (!firstDay.before(lastDay)) {
+	        if (firstDay.before(lastDay)) { //bug
 	        	throw new DateOutOfRangeException ("Second date specified is not  before the first date specified.");
 	        }
 
@@ -207,7 +207,7 @@ public class TimeTable {
 
 	        //Remove the appointment from the list appts if applicable
 
-	        for(int i=1;i<appts.size()-1;i++){ // bug will be -2  instead of -1
+	        for(int i=1;i<appts.size()-2;i++){ // bug will be -2  instead of -1
 	        	Appt tempAppt=appts.get(i);
 	        	if(tempAppt.equals(appt)){
 	        		appts.remove(i);

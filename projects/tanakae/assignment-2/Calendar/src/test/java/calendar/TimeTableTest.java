@@ -17,6 +17,7 @@ public class TimeTableTest {
 
 	 @Test
 	  public void test01()  throws Throwable  {
+	     //wow none of this actually works because of my bug
 	 	GregorianCalendar calOne=new GregorianCalendar(2018, 0, 10);
 	 	CalDay dayOne= new CalDay(calOne);
 	 	GregorianCalendar calTwo=new GregorianCalendar(2018, 1, 11);
@@ -52,25 +53,12 @@ public class TimeTableTest {
 		allAppts.add(appt7);
 		allAppts.add(appt8);
 
-
-		dayOne.addAppt(appt1);
-		dayOne.addAppt(appt2);
-		dayTwo.addAppt(appt3);
-		dayTwo.addAppt(appt4);
-		dayThree.addAppt(appt6);
-		dayThree.addAppt(appt7);
-		dayTwo.addAppt(appt8);
-
         //weekly recurrances
 		appRangeList=testTT.getApptRange(allAppts, calOne, calTwo);
 		appt1.setRecurrence(null, 1, 1, 10);
 		appRangeList=testTT.getApptRange(allAppts, calOne, calTwo);
 		appt1.setRecurrence(days, 1, 1, 10);
 		appRangeList=testTT.getApptRange(allAppts, calOne, calTwo);
-
-//		int[] oneday=new int[] {5};
-//		appt1.setRecurrence(oneday, 1, 1, 1);
-//		appRangeList=testTT.getApptRange(allAppts, calOne, calThree);
 
 		//monthly occurrences
 		appt1.setRecurrence(days, 2, 1, 10);
@@ -102,7 +90,7 @@ public class TimeTableTest {
          Appt appt5 = new Appt(20, 45, 12, 03, 2018, "Basketball Game", "Go Beavs!");
          Appt appt6 = new Appt(10, 30, 12, 03, 2018, "Nap", "Catchin' some zzz's");
          Appt appt7 = new Appt(8, 30, 12, 03, 2018, "Gym", "I hate exercise.");
-         Appt appt8 = new Appt(50, 300, 11, 02, 2018, "Not a Real Thing", "it's all in ur head.");
+         Appt appt8 = new Appt(4, 300, -800, 02, 2018, "Not a Real Thing", "it's all in ur head.");
          allAppts.add(appt1);
          allAppts.add(appt2);
          allAppts.add(appt3);
@@ -120,14 +108,11 @@ public class TimeTableTest {
          rmList = testTT.deleteAppt(allAppts, nullappt);
 
 
+
      }
      @ Test
      public void test03() throws Throwable{
-//         GregorianCalendar calOne=new GregorianCalendar(2018, 0, 10);
-//         CalDay dayOne= new CalDay(calOne);
-//         GregorianCalendar calTwo=new GregorianCalendar(2018, 1, 11);
-//         CalDay dayTwo= new CalDay(calTwo);
-
+         
          LinkedList<Appt> allAppts= new LinkedList<Appt>();
          TimeTable testTT= new TimeTable();
 
@@ -137,13 +122,12 @@ public class TimeTableTest {
          allAppts.add(appt1);
          allAppts.add(appt2);
 
-        // dayOne.addAppt(appt1);
-        // dayTwo.addAppt(appt2);
-
-
          int [] pv = {0,1};
          LinkedList<Appt> shuffList= new LinkedList<Appt>();
          shuffList=testTT.permute(allAppts,pv);
+
+         int [] pv2={0};
+         shuffList=testTT.permute(allAppts, pv2);
     }
 //add more unit tests as you needed
 }
