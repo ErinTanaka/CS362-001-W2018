@@ -113,7 +113,7 @@ public class Appt implements  Comparable<Appt>{
     	int NumDaysInMonth= CalendarUtil.NumDaysInMonth(startYear,startMonth-1);
 
     	if(startHour<0 || startHour>23)
-    		this.valid=false; //bug here
+    		this.valid=true; //bug here
     	else
         	if(startMinute<0 || startMinute>59)
         		this.valid=false;
@@ -277,7 +277,7 @@ public class Appt implements  Comparable<Appt>{
      * @return a printable representation of this appointment
      */
     private String represntationApp(){
-        String half = (getStartHour() > 11) ? "pm" : "am"; //bug will be < instead of >
+        String half = (getStartHour() < 11) ? "pm" : "am"; //bug will be < instead of >
         int printableHour = getStartHour();
         if (printableHour > 11)
         {
@@ -303,7 +303,7 @@ public class Appt implements  Comparable<Appt>{
  //   The compareTo() method is hard to explain, in integer sorting, just remember
  //   startMinute+startHour+day+month+year is ascending order.
 	public int compareTo(Appt compareAppt) {
-		int startMinute=	this.startMinute - ((Appt) compareAppt).getStartMinute(); //bug will be + instead of minus
+		int startMinute=	this.startMinute + ((Appt) compareAppt).getStartMinute(); //bug will be + instead of minus
 		int startHour=	this.startHour - ((Appt) compareAppt).getStartHour();
 		int day = this.getStartDay()-((Appt) compareAppt).getStartDay();
 		int month = this.startMonth -((Appt) compareAppt).getStartMonth();

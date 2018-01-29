@@ -28,7 +28,7 @@ public class TimeTableTest {
 
 	 	LinkedList<Appt> allAppts= new LinkedList<Appt>();
 	 	TimeTable testTT= new TimeTable();
-	 	LinkedList<CalDay> appRangeList= testTT.getApptRange(allAppts, calOne, calTwo);
+	 	LinkedList<CalDay> appRangeList= testTT.getApptRange(allAppts, calTwo, calOne);
 	 	//assertEquals(32, appRangeList.size());
 
 	 	int[] days=new int[] {0,1,2,3,4,5,6};
@@ -62,11 +62,11 @@ public class TimeTableTest {
 		dayTwo.addAppt(appt8);
 
         //weekly recurrances
-		appRangeList=testTT.getApptRange(allAppts, calOne, calThree);
+		appRangeList=testTT.getApptRange(allAppts, calFour, calThree);
 		appt1.setRecurrence(null, 1, 1, 10);
-		appRangeList=testTT.getApptRange(allAppts, calOne, calThree);
+		appRangeList=testTT.getApptRange(allAppts, calFour, calThree);
 		appt1.setRecurrence(days, 1, 1, 10);
-		appRangeList=testTT.getApptRange(allAppts, calOne, calThree);
+		appRangeList=testTT.getApptRange(allAppts, calFour, calThree);
 
 //		int[] oneday=new int[] {5};
 //		appt1.setRecurrence(oneday, 1, 1, 1);
@@ -74,12 +74,12 @@ public class TimeTableTest {
 
 		//monthly occurrences
 		appt1.setRecurrence(days, 2, 1, 10);
-		appRangeList=testTT.getApptRange(allAppts, calOne, calThree);
+		appRangeList=testTT.getApptRange(allAppts, calFour, calThree);
 		//yearly
 		 appt1.setRecurrence(days, 3, 1, 10);
-		 appRangeList=testTT.getApptRange(allAppts, calOne, calFour);
+		 appRangeList=testTT.getApptRange(allAppts, calFour, calOne);
 		 appt1.setRecurrence(days, 0, 1, 10);
-		 appRangeList=testTT.getApptRange(allAppts, calOne, calFour);
+		 appRangeList=testTT.getApptRange(allAppts, calOne, calOne);
 
 
 
