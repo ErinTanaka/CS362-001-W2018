@@ -125,43 +125,54 @@ public class ApptTest {
 
 
 	 }
-	 @ Test   //various invalid start info for isvalid
+	 @ Test  //various invalid info for isValid
 		public void test05() throws Throwable{
 		 Appt appt = new Appt(21, 30 , 15 , 01 , 2018 , "Therapy", "I need this shit.");
 
 		 appt.setStartHour(27);
 		 assertFalse(appt.getValid());
-
 		 appt.setStartHour(-5);
 		 assertFalse(appt.getValid());
+		 appt.setStartHour(0);
+		 assertTrue(appt.getValid());
+		 appt.setStartHour(23);
+		 assertTrue(appt.getValid());
 
 		 appt.setStartHour(21);
 		 assertTrue(appt.getValid());
 
+
 		 appt.setStartMinute(500);
 		 assertFalse(appt.getValid());
-
 		 appt.setStartMinute(-5);
 		 assertFalse(appt.getValid());
+		 appt.setStartMinute(0);
+		 assertTrue(appt.getValid());
+		 appt.setStartMinute(59);
+		 assertTrue(appt.getValid());
 
 		 appt.setStartMinute(30);
 		 assertTrue(appt.getValid());
 
+
 		 appt.setStartDay(45);
 		 assertFalse(appt.getValid());
-
 		 appt.setStartDay(-5);
 		 assertFalse(appt.getValid());
+		 appt.setStartDay(1);
+		 assertTrue(appt.getValid());
+		 appt.setStartDay(31);
+		 assertTrue(appt.getValid());
 
  		 appt.setStartDay(15);
 		 assertTrue(appt.getValid());
 
-		 appt.setStartMonth(11);
+		 appt.setStartMonth(1);
 		 assertTrue(appt.getValid());
-
-		 // appt.setStartMonth(15);
-		 // temp=appt.getValid();
-		 // assertFalse(temp);
+		 appt.setStartMonth(12);
+		 assertTrue(appt.getValid());
+		 //appt.setStartMonth(0);
+		 //assertFalse(appt.getValid());
 
 
 	 }
@@ -171,9 +182,13 @@ public class ApptTest {
 		String str=appt.toString();
 		assertEquals(null, str);
 
-		appt.setStartHour(0);
+		appt.setStartHour(11);
 		str=appt.toString();
-		assertEquals("	1/15/2018 at 12:30am ,Therapy, I need this shit.\n", str);
+		assertEquals("	1/15/2018 at 11:30am ,Therapy, I need this shit.\n", str);
+
+		appt.setStartHour(12);
+		str=appt.toString();
+		assertEquals("	1/15/2018 at 12:30pm ,Therapy, I need this shit.\n", str);
 
 		appt.setStartHour(21);
 		str=appt.toString();
@@ -184,8 +199,24 @@ public class ApptTest {
 		public void test07() throws Throwable{
 		Appt apptA = new Appt(21, 30 , 15 , 01 , 2018 , "Therapy", "I need this shit.");
 		Appt apptB = new Appt(7, 30 , 15 , 01 , 2018 , "Homework", "Wow, productivity.");
-        int cmp=apptA.compareTo(apptB);
-        assertEquals(14, cmp);
+    int cmp=apptA.compareTo(apptB);
+    assertEquals(14, cmp);
+		apptA.setStartHour(7);
+
+		apptA.setStartMinute(35);
+		assertEquals(5, apptA.compareTo(apptB));
+		apptA.setStartMinute(30);
+
+		apptA.setStartDay(10);
+		assertEquals(-5, apptA.compareTo(apptB));
+		apptA.setStartDay(15);
+
+		apptA.setStartMonth(02);
+		assertEquals(1, apptA.compareTo(apptB));
+		apptA.setStartMonth(01);
+
+		apptA.setStartYear(2020);
+		assertEquals(2, apptA.compareTo(apptB));
 	}
 
 }

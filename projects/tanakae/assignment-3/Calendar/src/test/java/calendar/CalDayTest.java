@@ -43,12 +43,8 @@ public class CalDayTest {
 		 assertEquals(2, day.getSizeAppts());
 		 Appt appt3 = new Appt(18, 500 , 70, 01, 2018 , "Groceries", "Yummmmmmmmm.");
 		 day.addAppt(appt3);
-		// assertEquals(2, day.getSizeAppts());
-		 appt3.setStartHour(17);
-		 day.addAppt(appt3);
-		 //assertEquals(3, day.getSizeAppts());
-		 //Appt invalidAppt=new Appt();
-		 //day.addAppt(invalidAppt);
+		 assertEquals(2, day.getSizeAppts());
+
 
 	 }
 	@Test
