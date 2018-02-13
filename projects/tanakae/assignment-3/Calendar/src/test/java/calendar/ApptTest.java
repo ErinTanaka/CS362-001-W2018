@@ -125,7 +125,7 @@ public class ApptTest {
 
 
 	 }
-	 @ Test  //various invalid info for isValid
+	 @ Test   //various invalid info for isValid
 		public void test05() throws Throwable{
 		 Appt appt = new Appt(21, 30 , 15 , 01 , 2018 , "Therapy", "I need this shit.");
 
@@ -171,9 +171,10 @@ public class ApptTest {
 		 assertTrue(appt.getValid());
 		 appt.setStartMonth(12);
 		 assertTrue(appt.getValid());
-		 //appt.setStartMonth(0);
+		 //appt.setStartMonth(15);
 		 //assertFalse(appt.getValid());
-
+		 //appt.setStartYear(-99999999);
+ 		 //assertFalse(appt.getValid());
 
 	 }
 	@ Test // toString
@@ -217,6 +218,24 @@ public class ApptTest {
 
 		apptA.setStartYear(2020);
 		assertEquals(2, apptA.compareTo(apptB));
+
+	}
+	@ Test (expected = ArrayIndexOutOfBoundsException.class)
+	public void test08() throws Throwable{
+		Appt appt = new Appt(21, 30 , 15 , 01 , 2018 , "Therapy", "I need this shit.");
+
+			appt.setStartMonth(-1);
+			assertFalse(appt.getValid());
+
+	}
+	@ Test (expected = ArrayIndexOutOfBoundsException.class)
+	public void test09() throws Throwable{
+		Appt apptB = new Appt(21, 30 , 1 , 17 , 2018 , "Therapy", "I need this shit.");
+		assertFalse(apptB.getValid());
+		apptB.setStartMonth(01);
+		//apptB.setStartYear(2018);
+		assertTrue(apptB.getValid());
+
 	}
 
 }

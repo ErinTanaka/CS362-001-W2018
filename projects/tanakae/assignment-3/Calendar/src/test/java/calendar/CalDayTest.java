@@ -58,7 +58,7 @@ public class CalDayTest {
 		int dateDay=day.getDay();
 		assertEquals(apptDay, dateDay);
 		int dateMonth=day.getMonth();
-		//assertEquals(0, dateMonth);
+		assertEquals(01, dateMonth);
 		int dateYear=day.getYear();
 		assertEquals(2018, dateYear);
 
@@ -109,13 +109,32 @@ public class CalDayTest {
 		CalDay invalidDay=new CalDay();
 		assertEquals(null, invalidDay.iterator());
 		Iterator i=validDay.iterator();
-//		int count=1;
-//		while(i.hasNext()){
-//			count++;
-//			Object element=i.next();
-//		}
-//		assertEquals(2, count);
+		int count=1;
+		while(i.hasNext()){
+			count++;
+			Object element=i.next();
+		}
+		assertEquals(3, count);
 		//valid iterator test here
 	}
+	@ Test
+		public void test06() throws Throwable{
+			GregorianCalendar cal=new GregorianCalendar();
+			CalDay validDay = new CalDay(cal);
+			int date=cal.get(cal.DAY_OF_MONTH);
+			Appt appt1 = new Appt(15, 30 , date, 01, 2018 , "Therapy", "I need this shit.");
+			validDay.addAppt(appt1);
+			Appt appt2 = new Appt(18, 30 , date, 01, 2018 , "Yoga", "Ommmmmmmmm.");
+			validDay.addAppt(appt2);
+			Appt appt3 = new Appt(18, 30 , date, 01, 2018 , "Groceries", "Yummmmmmmmm.");
+			validDay.addAppt(appt3);
+			Appt appt4 = new Appt(16, 30 , date, 01, 2018 , "Nap", "Zzzzzz.");
+			validDay.addAppt(appt4);
+			assertEquals(appt1, validDay.getAppts().get(0));
+			assertEquals(appt4, validDay.getAppts().get(1));
+			assertEquals(appt2, validDay.getAppts().get(2));
+			assertEquals(appt3, validDay.getAppts().get(3));
+
+		}
 //add more unit tests as you needed
 }
