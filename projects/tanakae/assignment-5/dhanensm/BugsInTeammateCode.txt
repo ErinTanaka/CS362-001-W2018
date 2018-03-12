@@ -1,0 +1,60 @@
+ID: validCalDay01
+Symptom: never appointments in calendar days
+Cause: valid is initialized to false instead of true
+Code that always produces bug:
+CalDayTest.java test04
+GregorianCalendar cal=new GregorianCalendar();
+CalDay validDay = new CalDay(cal);
+date=validDay.toString();
+Appt appt=new Appt(21, 30 , validDay.getDay(), 01, 2018 , "Therapy", "I need this shit.");
+validDay.addAppt(appt);
+date=validDay.toString();
+cmp="\t --- "+validDay.getMonth()+"/"+validDay.getDay()+"/"+validDay.getYear()+" --- \n"+" --- -------- Appointments ------------ --- \n\n"+"  1/15/2018 at 9:30pm ,Therapy, I need this shit.\n";
+assertEquals(cmp, date);
+
+Version: assignment-1
+Severity: High, application doesn’t work because of the bug
+Priority: High, if the application doesn’t work at all users won’t want to use it
+
+
+ID: datecheckTimeTable02
+Symptom: function getApptRange in timetable.java throws date out of range exception
+Cause: throws if firstday is before lastday and second check for if firstday is not before lastday also throws
+Code that always produces bug:
+TimeTableTest.java, test06
+GregorianCalendar calOne=new GregorianCalendar(2018, 0, 10);
+CalDay dayOne= new CalDay(calOne);
+GregorianCalendar calTwo=new GregorianCalendar(2018, 1, 11);
+CalDay dayTwo= new CalDay(calTwo);
+TimeTable timetable=new TimeTable();
+LinkedList<Appt> apptList=new LinkedList<Appt>();
+Appt appt1= new Appt(21, 30 , 11 , 01 , 2018 , "Therapy", "I need this shit.");
+Appt appt2= new Appt(16, 00 , 14 , 02 , 2018 , "Yoga", "Ommmmm.");
+Appt appt3 = new Appt(4, 300, 10, 02, 2018, "Not a Real Thing", "it's all in ur head.");
+
+apptList.add(appt1);
+apptList.add(appt3);
+apptList.add(appt2);
+
+
+LinkedList<CalDay> result=timetable.getApptRange(apptList, calOne, calTwo);
+
+
+Version: assignment-1
+Severity: High, causes application to throw when it shouldn’t
+Priority: High, users won’t be able to use a big part of the functionality of the application
+ID: printHourAppt03
+Symptom: 0:30 is printed instead of 12:30
+Cause: hour is saved as 0 but conditional checks for an hour less than zero
+Code that always produces bug:
+ApptTest.java, test06
+Appt appt = new Appt(40, 30 , 15 , 01 , 2018 , "Therapy", "I need this shit.");
+String str=appt.toString();
+assertEquals(null, str);
+appt.setStartHour(12);
+str=appt.toString();
+assertEquals(" 1/15/2018 at 12:30pm ,Therapy, I need this shit.\n", str);
+
+Version: assignment-1
+Severity: Low, user can figure out what the time is supposed to be
+Priority: Low, bug only pops up in one specific case, all other hours work fine
