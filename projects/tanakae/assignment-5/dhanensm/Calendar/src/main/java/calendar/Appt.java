@@ -22,7 +22,7 @@ public class Appt implements  Comparable<Appt>{
     /** Used for knowing whether or not an appointment is valid or not */
     private boolean valid;
 
-	/** The starting hour of the appointment */
+    /** The starting hour of the appointment */
     private int startHour;
 
     /** The starting minute of the appointment */
@@ -85,14 +85,14 @@ public class Appt implements  Comparable<Appt>{
      * @param description The appointment's details
      */
     public Appt(int startHour, int startMinute,
-            int startDay, int startMonth, int startYear,String title, String description)
+                int startDay, int startMonth, int startYear,String title, String description)
     {
         //Sets all instance variables
-    	this.startHour = startHour;
-    	this.startMinute = startMinute;
-    	this.startDay = startDay;
-    	this.startMonth = startMonth;
-    	this.startYear = startYear;
+        this.startHour = startHour;
+        this.startMinute = startMinute;
+        this.startDay = startDay;
+        this.startMonth = startMonth;
+        this.startYear = startYear;
         setTitle(title);
         setDescription(description);
 
@@ -110,29 +110,29 @@ public class Appt implements  Comparable<Appt>{
      * @sets valid to true if the appointment is valid
      */
     private void isValid() {
-    	int NumDaysInMonth= CalendarUtil.NumDaysInMonth(startYear,startMonth-1);
+        int NumDaysInMonth= CalendarUtil.NumDaysInMonth(startYear,startMonth-1);
 
-    	if(startHour<0 || startHour>23)
-    		this.valid=false; //bug fixed
-    	else
-        	if(startMinute<0 || startMinute>59)
-        		this.valid=false;
-        	else
-            	if(startDay<1 || startDay>NumDaysInMonth)
-            		this.valid=false;
-            	else
-                	if(startMonth<1 || startMonth>12)
-                		this.valid=false;
-                	else
-                		this.valid=true;
+        if(startHour<0 || startHour>23)
+            this.valid=false;
+        else
+        if(startMinute<0 || startMinute>59)
+            this.valid=true;
+        else
+        if(startDay<1 || startDay>NumDaysInMonth)
+            this.valid=false;
+        else
+        if(startMonth<1 || startMonth>12)
+            this.valid=false;
+        else
+            this.valid=true;
     }
 
 
 
     /** Sets startHour */
     public void setStartHour(int startHour) {
-    	this.startHour = startHour;
-    	 isValid();
+        this.startHour = startHour;
+        isValid();
     }
 
     /** Sets startHour */
@@ -277,13 +277,13 @@ public class Appt implements  Comparable<Appt>{
      * @return a printable representation of this appointment
      */
     private String represntationApp(){
-        String half = (getStartHour() > 11) ? "pm" : "am"; //bug fixed
+        String half = (getStartHour() > 11) ? "pm" : "am";
         int printableHour = getStartHour();
         if (printableHour > 11)
         {
             printableHour -= 12;
         }
-        if (printableHour == 0)
+        if (printableHour < 0)   //< instead of ==
         {
             printableHour = 12;
         }
@@ -293,28 +293,28 @@ public class Appt implements  Comparable<Appt>{
     }
     public String toString()
     {
-		if (!getValid()) {
-		    return null;
-		}
-         String day= this.getStartMonth()+"/"+this.getStartDay()+"/"+this.getStartYear() + " at ";
+        if (!getValid()) {
+            return null;
+        }
+        String day= this.getStartMonth()+"/"+this.getStartDay()+"/"+this.getStartYear() + " at ";
         return "\t"+ day +  this.represntationApp()  + " ," +  getTitle()+ ", "+  getDescription()+"\n";
     }
 
- //   The compareTo() method is hard to explain, in integer sorting, just remember
- //   startMinute+startHour+day+month+year is ascending order.
-	public int compareTo(Appt compareAppt) {
-		int startMinute=	this.startMinute - ((Appt) compareAppt).getStartMinute(); //bug fixed
-		int startHour=	this.startHour - ((Appt) compareAppt).getStartHour();
-		int day = this.getStartDay()-((Appt) compareAppt).getStartDay();
-		int month = this.startMonth -((Appt) compareAppt).getStartMonth();
-		int year = this.startYear -((Appt) compareAppt).getStartYear();
+    //   The compareTo() method is hard to explain, in integer sorting, just remember
+    //   startMinute+startHour+day+month+year is ascending order.
+    public int compareTo(Appt compareAppt) {
+        int startMinute=	this.startMinute - ((Appt) compareAppt).getStartMinute();
+        int startHour=	this.startHour - ((Appt) compareAppt).getStartHour();
+        int day = this.getStartDay()-((Appt) compareAppt).getStartDay();
+        int month = this.startMonth -((Appt) compareAppt).getStartMonth();
+        int year = this.startYear -((Appt) compareAppt).getStartYear();
 
 
-		//ascending order
+        //ascending order
 
-		return startMinute+startHour+day+month+year;
+        return startMinute+startHour+day+month+year;
 
-	}
+    }
 
 
 }

@@ -36,19 +36,19 @@ public class CalDay {
 	int year;
 
 	/**
-	* Default constructor
-	* Constructs an invalid CalDay object
-	*/
+	 * Default constructor
+	 * Constructs an invalid CalDay object
+	 */
 	public CalDay() {
 		valid = false;
 	}
 
 	/**
-	* Constructor
-	* Creates a new CalDay which is ready for appointments to be
-	* added to it. Note that months are numbered 0 through 11. This does
-	* not check to see if a date is valid.
-	*/
+	 * Constructor
+	 * Creates a new CalDay which is ready for appointments to be
+	 * added to it. Note that months are numbered 0 through 11. This does
+	 * not check to see if a date is valid.
+	 */
 	public CalDay(GregorianCalendar cal) {
 
 		int day = cal.get(cal.DAY_OF_MONTH);
@@ -61,7 +61,7 @@ public class CalDay {
 
 		setAppts(new LinkedList<Appt>());
 
-		valid = true;
+		valid = false;			//true
 	}
 
 	/**
@@ -75,14 +75,14 @@ public class CalDay {
 			for (int i = 0; i < getAppts().size(); i++) {
 				//Put the appointment in the correct order - finish this
 				if (((Appt)getAppts().get(i)).getStartHour() >
-										appt.getStartHour()) {
+						appt.getStartHour()) {
 
 					getAppts().add(i, appt);
 					return;
 				}
 			}
-		    //The appointment hasn't been added yet, so add it
-		    getAppts().add(appt);
+			//The appointment hasn't been added yet, so add it
+			getAppts().add(appt);
 		}
 	}
 
@@ -91,7 +91,7 @@ public class CalDay {
 	 * @return True if this is an initalized CalDay object
 	 */
 	public boolean isValid() {
-	    return valid;
+		return valid;
 	}
 
 	/**
@@ -101,18 +101,18 @@ public class CalDay {
 	 * time set placed at the beginning.
 	 */
 	public Iterator<?> iterator() {
-	    if (isValid()) {
-	        return getAppts().iterator();
-	    }
-	    else {
-	        return null;
-	    }
+		if (isValid()) {
+			return getAppts().iterator();
+		}
+		else {
+			return null;
+		}
 	}
 
 	/** Sets appts */
 	private void setAppts(LinkedList<Appt> appts) {
 		if(appts!=null)
-				this.appts = appts;
+			this.appts = appts;
 
 		if(appts!=null&&appts.size()==0)
 			this.appts = appts;
@@ -120,30 +120,30 @@ public class CalDay {
 
 	/** Sets day */
 	private void setDay(int day) {
-	    this.day = day;
+		this.day = day;
 	}
 
 	/** Sets month */
 	private void setMonth(int month) {
-	    this.month = month;
+		this.month = month;
 	}
 
 	/** Sets year */
 	private void setYear(int year) {
-	    this.year = year;
+		this.year = year;
 	}
 
 	/** Gets appts */
 	public LinkedList<Appt> getAppts() {
-	    return appts;
+		return appts;
 	}
 	/** Gets size of the Appts */
 	public int getSizeAppts() {
-	    return appts.size();
+		return appts.size();
 	}
 	/** Gets day */
 	public int getDay() {
-	    return day;
+		return day;
 	}
 
 	/**
@@ -151,12 +151,12 @@ public class CalDay {
 	 * are represented by 0-11
 	 */
 	public int getMonth() {
-	    return month;
+		return month;
 	}
 
 	/** Gets year */
 	public int getYear() {
-	    return year;
+		return year;
 	}
 
 	/**
@@ -167,23 +167,23 @@ public class CalDay {
 	 * debugging.
 	 */
 	public String toString() {
-	     StringBuilder sb = new StringBuilder();
+		StringBuilder sb = new StringBuilder();
 
 		if (isValid()) {
 			String todayDate = (getMonth()) + "/" + getDay() + "/" + getYear();
 			sb.append("\t --- " + todayDate + " --- \n");
 			sb.append(" --- -------- Appointments ------------ --- \n");
 			Iterator<Appt> itr = this.appts.iterator();
-		    while(itr.hasNext()) {
-		         Object element = itr.next();
+			while(itr.hasNext()) {
+				Object element = itr.next();
 
-		         sb.append(element + " ");
-		      }
+				sb.append(element + " ");
+			}
 
 //			sb.append(this.appts);
 			sb.append("\n");
 		}
-       	 return sb.toString();
+		return sb.toString();
 
 	}
 }
