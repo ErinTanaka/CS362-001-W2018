@@ -15,7 +15,7 @@
       <file leaf-file-name="Appt.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/calendar/Appt.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
+            <state relative-caret-position="1921">
               <caret line="115" column="41" lean-forward="false" selection-start-line="115" selection-start-column="41" selection-end-line="115" selection-end-column="41" />
               <folding>
                 <element signature="e#0#9272#0" expanded="true" />
@@ -59,8 +59,8 @@
       <file leaf-file-name="CalDay.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/calendar/CalDay.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="549">
-              <caret line="188" column="1" lean-forward="true" selection-start-line="188" selection-start-column="1" selection-end-line="188" selection-end-column="1" />
+            <state relative-caret-position="2856">
+              <caret line="188" column="1" lean-forward="false" selection-start-line="188" selection-start-column="1" selection-end-line="188" selection-end-column="1" />
               <folding>
                 <element signature="e#699#700#0" expanded="true" />
                 <element signature="e#719#720#0" expanded="true" />
@@ -94,9 +94,6 @@
               <caret line="38" column="52" lean-forward="false" selection-start-line="38" selection-start-column="52" selection-end-line="38" selection-end-column="52" />
               <folding>
                 <element signature="e#0#7262#0" expanded="true" />
-                <element signature="e#803#811#0" expanded="true" />
-                <element signature="e#2734#2753#0" expanded="true" />
-                <element signature="e#6972#6978#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -138,9 +135,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
       <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -299,14 +296,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -336,6 +332,87 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/calendar/Appt.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1955">
+          <caret line="115" column="41" lean-forward="false" selection-start-line="115" selection-start-column="41" selection-end-line="115" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#9272#0" expanded="true" />
+            <element signature="e#5199#5200#0" expanded="true" />
+            <element signature="e#5231#5232#0" expanded="true" />
+            <element signature="e#5292#5293#0" expanded="true" />
+            <element signature="e#5326#5327#0" expanded="true" />
+            <element signature="e#5383#5384#0" expanded="true" />
+            <element signature="e#5414#5415#0" expanded="true" />
+            <element signature="e#5475#5476#0" expanded="true" />
+            <element signature="e#5508#5509#0" expanded="true" />
+            <element signature="e#5567#5568#0" expanded="true" />
+            <element signature="e#5599#5600#0" expanded="true" />
+            <element signature="e#5653#5654#0" expanded="true" />
+            <element signature="e#5681#5682#0" expanded="true" />
+            <element signature="e#5747#5748#0" expanded="true" />
+            <element signature="e#5781#5782#0" expanded="true" />
+            <element signature="e#5841#5842#0" expanded="true" />
+            <element signature="e#5874#5875#0" expanded="true" />
+            <element signature="e#6475#6476#0" expanded="true" />
+            <element signature="e#6513#6514#0" expanded="true" />
+            <element signature="e#6601#6602#0" expanded="true" />
+            <element signature="e#6653#6654#0" expanded="true" />
+            <element signature="e#6733#6734#0" expanded="true" />
+            <element signature="e#6779#6780#0" expanded="true" />
+            <element signature="e#6841#6842#0" expanded="true" />
+            <element signature="e#6875#6876#0" expanded="true" />
+            <element signature="e#6929#6930#0" expanded="true" />
+            <element signature="e#6959#6960#0" expanded="true" />
+            <element signature="e#7019#7020#0" expanded="true" />
+            <element signature="e#7051#7052#0" expanded="true" />
+            <element signature="e#7221#7222#0" expanded="true" />
+            <element signature="e#7282#7283#0" expanded="true" />
+            <element signature="e#7350#7351#0" expanded="true" />
+            <element signature="e#7387#7388#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/calendar/CalDay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3196">
+          <caret line="188" column="1" lean-forward="true" selection-start-line="188" selection-start-column="1" selection-end-line="188" selection-end-column="1" />
+          <folding>
+            <element signature="e#699#700#0" expanded="true" />
+            <element signature="e#719#720#0" expanded="true" />
+            <element signature="e#1965#1966#0" expanded="true" />
+            <element signature="e#1984#1985#0" expanded="true" />
+            <element signature="e#2602#2603#0" expanded="true" />
+            <element signature="e#2623#2624#0" expanded="true" />
+            <element signature="e#2679#2680#0" expanded="true" />
+            <element signature="e#2704#2705#0" expanded="true" />
+            <element signature="e#2757#2758#0" expanded="true" />
+            <element signature="e#2780#2781#0" expanded="true" />
+            <element signature="e#2838#2839#0" expanded="true" />
+            <element signature="e#2857#2858#0" expanded="true" />
+            <element signature="e#2917#2918#0" expanded="true" />
+            <element signature="e#2943#2944#0" expanded="true" />
+            <element signature="e#2983#2984#0" expanded="true" />
+            <element signature="e#3000#3001#0" expanded="true" />
+            <element signature="e#3138#3139#0" expanded="true" />
+            <element signature="e#3157#3158#0" expanded="true" />
+            <element signature="e#3200#3201#0" expanded="true" />
+            <element signature="e#3218#3219#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/calendar/TimeTable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="38" column="52" lean-forward="false" selection-start-line="38" selection-start-column="52" selection-end-line="38" selection-end-column="52" />
+          <folding>
+            <element signature="e#0#7262#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/calendar/Appt.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -380,7 +457,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/calendar/Appt.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
+        <state relative-caret-position="1921">
           <caret line="115" column="41" lean-forward="false" selection-start-line="115" selection-start-column="41" selection-end-line="115" selection-end-column="41" />
           <folding>
             <element signature="e#0#9272#0" expanded="true" />
@@ -422,8 +499,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/calendar/CalDay.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="549">
-          <caret line="188" column="1" lean-forward="true" selection-start-line="188" selection-start-column="1" selection-end-line="188" selection-end-column="1" />
+        <state relative-caret-position="2856">
+          <caret line="188" column="1" lean-forward="false" selection-start-line="188" selection-start-column="1" selection-end-line="188" selection-end-column="1" />
           <folding>
             <element signature="e#699#700#0" expanded="true" />
             <element signature="e#719#720#0" expanded="true" />
@@ -455,9 +532,6 @@
           <caret line="38" column="52" lean-forward="false" selection-start-line="38" selection-start-column="52" selection-end-line="38" selection-end-column="52" />
           <folding>
             <element signature="e#0#7262#0" expanded="true" />
-            <element signature="e#803#811#0" expanded="true" />
-            <element signature="e#2734#2753#0" expanded="true" />
-            <element signature="e#6972#6978#0" expanded="true" />
           </folding>
         </state>
       </provider>
